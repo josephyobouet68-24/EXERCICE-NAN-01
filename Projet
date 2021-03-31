@@ -1,0 +1,51 @@
+## EXERCICE1: NOMBRE MYSTERIEUX
+
+```php
+
+    function nombreMysterieux($SaisirUser = 0)
+    {
+
+        $answer = "Veuillez saisir un nombre.";
+
+        if (! empty($SaisirUser)) 
+        {   
+            
+            $nombreMystere  = rand(1,99);
+
+            $SaisirUtilisateur = (! empty($SaisirUser) && intval($SaisirUser) < 100 ) ? intval($SaisirUser) : 0 ;
+
+            if ($nombreMystere === $SaisirUtilisateur) 
+            {
+                $answer = "Vous avez gagné ! ";
+            }
+            elseif ($nombreMystere < $SaisirUtilisateur) 
+            {
+                $answer = "Le nombre est trop grand !";
+            }
+            else 
+            {
+                $answer ="Le nombre est trop petit !";
+            }
+        }
+
+        return $answer;
+    }
+```
+
+##EXERCICE2: FONCTION PURGE
+```php
+
+    function FonctionPurge($Phrase = '', $MotPurge = '')
+    {
+        $PhraseUtilisateur = (! empty($Phrase) && is_string($Phrase)) ? ($Phrase) : '' ;
+
+        $MotPurgeUtilisateur = (! empty($MotPurge) && is_string($MotPurge)) ? ($MotPurge) : '' ;
+
+        if (! empty($PhraseUtilisateur) && ! empty($MotPurgeUtilisateur)) 
+        {   
+            
+            $answer = str_replace($MotPurgeUtilisateur, '', $PhraseUtilisateur);
+        }
+        return $answer;
+    }
+```
